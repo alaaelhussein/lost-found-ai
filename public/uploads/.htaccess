@@ -1,0 +1,28 @@
+# Dossier des photos envoyées par les utilisateurs (Apache / Hostinger).
+# Rien ici ne doit jamais être exécuté : seules des images sont servies.
+
+# Désactive PHP dans ce dossier. Entouré de IfModule : sur un serveur où PHP
+# tourne en PHP-FPM, « php_flag » seul provoquerait une erreur 500.
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Seules les images sont accessibles ; tout autre fichier est refusé.
+<FilesMatch ".*">
+    Require all denied
+</FilesMatch>
+<FilesMatch "\.(jpe?g|png|webp)$">
+    Require all granted
+</FilesMatch>
+
+Options -Indexes
+
+# Même si un fichier piégé passait les contrôles, le navigateur ne doit ni
+# deviner son type, ni exécuter le moindre script qu'il contiendrait.
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Content-Security-Policy "default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; sandbox"
+</IfModule>

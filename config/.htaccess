@@ -1,0 +1,3 @@
+# Dossier de configuration (mots de passe, clé secrète) : jamais accessible
+# depuis le web, même si le serveur était mal configuré.
+Require all denied

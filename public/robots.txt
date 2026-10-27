@@ -1,0 +1,14 @@
+# Moteurs de recherche : les annonces publiques peuvent être indexées (elles
+# aident à retrouver un objet), mais pas les pages privées ou techniques.
+# Ce fichier n'est PAS une protection : ces pages sont de toute façon réservées
+# aux utilisateurs connectés.
+User-agent: *
+Disallow: /account
+Disallow: /admin/
+Disallow: /conversations
+Disallow: /my-items
+Disallow: /orders/
+Disallow: /claims/
+Disallow: /verify-email
+Disallow: /reset-password
+Disallow: /notifications/

@@ -1,0 +1,34 @@
+# =============================================================
+# Filet de sécurité pour les hébergements mutualisés (Hostinger...).
+#
+# La configuration IDÉALE : la racine web du domaine pointe directement sur
+# le dossier public/ (ce fichier est alors ignoré).
+#
+# Si l'hébergeur ne le permet pas et que TOUT le projet est déposé dans
+# public_html/, ce fichier redirige chaque requête vers public/ :
+#   /items            => public/items          => public/index.php (routeur)
+#   /css/style.css    => public/css/style.css
+#   /config/config.php => public/config/config.php (n'existe pas) => page 404
+# Ainsi config/ (mots de passe), storage/ (photos de preuve privées), src/,
+# bin/ et database/ restent inaccessibles depuis le web.
+# =============================================================
+
+Options -Indexes
+
+# Fichiers cachés (.env, .git, .htaccess...) : jamais servis
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Ne pas réécrire ce qui pointe déjà dans public/ (évite une boucle)
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Sans mod_rewrite, impossible de protéger les dossiers : on refuse tout
+# plutôt que d'exposer config/config.php.
+<IfModule !mod_rewrite.c>
+    Require all denied
+</IfModule>

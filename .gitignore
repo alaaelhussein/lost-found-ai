@@ -1,0 +1,23 @@
+# Configuration locale et secrets
+config/config.php
+.env
+
+# Notes de travail personnelles, non destinées au dépôt public
+CLAUDE.md
+
+# Photos envoyées par les utilisateurs
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/.htaccess
+
+# Dépendances / IDE / système
+vendor/
+node_modules/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Fichiers privés générés par l'application (preuves, logs des emails)
+storage/

@@ -1,0 +1,12 @@
+# Apache (XAMPP en local, Hostinger en production)
+# Toute URL qui ne correspond pas à un vrai fichier (CSS, JS, image)
+# est envoyée à index.php, qui choisit le contrôleur via le routeur.
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
