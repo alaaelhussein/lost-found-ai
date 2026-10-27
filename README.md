@@ -787,4 +787,4 @@ Projet développé en solo par Alaa EL HUSSEIN.
 
 ## Licence
 
-À définir.
+Tous droits réservés. Ce code est public pour consultation (portfolio), mais ni la copie, ni la réutilisation, ni la distribution ne sont autorisées sans l'accord écrit de l'auteur.
