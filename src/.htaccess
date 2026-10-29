@@ -1,0 +1,4 @@
+# Code de l'application : jamais accessible depuis le web.
+# Nécessaire uniquement si index.php est à la racine du site (hébergements
+# qui n'acceptent pas de racine web pointant sur public/, voir DEPLOIEMENT.md).
+Require all denied

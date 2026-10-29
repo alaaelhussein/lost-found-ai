@@ -158,7 +158,7 @@ Dans le conteneur PHP, l'hôte MySQL est `db` (et non `localhost`) :
 ### 2.7 Alternative sans Docker : XAMPP
 
 Prérequis : PHP **8.2 ou plus** (extensions `pdo_mysql`, `mbstring`, `fileinfo`,
-`gd`, `sodium`) et MySQL 8 / MariaDB 10.4+, fournis par XAMPP.
+`gd`, `openssl`) et MySQL 8 / MariaDB 10.4+, fournis par XAMPP.
 
 1. **Démarrer MySQL** dans le panneau de contrôle XAMPP (*Start* à côté de *MySQL*).
 2. **Créer la configuration locale** : `copy config\config.example.php config\config.php`.
@@ -678,7 +678,7 @@ Chaque email de correspondance contient un **lien de désinscription signé** (H
 |---|---|---|
 | **Point relais** (Mondial Relay, Chronopost Shop2Shop, Colissimo) | prénom + point relais | aucune adresse |
 | **Casier** (InPost, Mondial Relay Lockers) | prénom + casier | aucune adresse |
-| **Domicile** (Colissimo, Chronopost) | nom + adresse (sur l'étiquette) | **chiffrée** (libsodium), effacée à la livraison |
+| **Domicile** (Colissimo, Chronopost) | nom + adresse (sur l'étiquette) | **chiffrée** (AES-256-GCM), effacée à la livraison |
 
 Dans tous les cas, l'**expéditeur** imprimé est la plateforme (`delivery.sender`) : la personne qui a trouvé l'objet reste anonyme.
 

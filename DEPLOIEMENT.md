@@ -33,7 +33,7 @@ Cochez les cases au fur et à mesure.
 - [ ] **Souscrire un hébergement PHP**. Un mutualisé Hostinger *Premium* ou *Business* suffit : il donne l'accès SSH, les tâches cron, MariaDB et le SSL gratuit.
 - [ ] Dans le panneau de l'hébergeur, choisir **PHP 8.2 ou plus récent**.
 - [ ] Vérifier que ces **extensions PHP** sont activées (hPanel > Avancé > Configuration PHP > Extensions) :
-  `pdo_mysql`, `mbstring`, `gd`, `exif`, `fileinfo`, `sodium`, `curl`, `openssl`.
+  `pdo_mysql`, `mbstring`, `gd`, `exif`, `fileinfo`, `curl`, `openssl`.
   Si `gd` manque, les photos sont enregistrées **avec leur position GPS** : ne pas mettre en ligne sans elle.
 
 ---

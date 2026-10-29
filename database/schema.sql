@@ -209,7 +209,7 @@ CREATE TABLE orders (
   relay_point_id    VARCHAR(60)  NULL,
   relay_point_label VARCHAR(255) NULL,
   recipient_name    VARCHAR(100) NOT NULL,          -- prénom seulement en point relais
-  address_encrypted TEXT         NULL,              -- domicile uniquement, CHIFFRÉ (sodium)
+  address_encrypted TEXT         NULL,              -- domicile uniquement, CHIFFRÉ (AES-256-GCM)
   shipping_cents    INT UNSIGNED NOT NULL,
   tip_cents         INT UNSIGNED NOT NULL,
   total_cents       INT UNSIGNED NOT NULL,

@@ -1,0 +1,3 @@
+# Scripts en ligne de commande (admin, nettoyage...) : jamais accessibles
+# depuis le web, ils ne doivent être lancés que par SSH ou une tâche cron.
+Require all denied
