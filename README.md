@@ -57,6 +57,10 @@ Projet personnel, développé en solo par Alaa EL HUSSEIN dans le cadre d'une re
 
 ## 2. Installation pas à pas
 
+> Ces étapes permettent de faire tourner le projet en local pour l'évaluer
+> (démonstration, entretien) — elles ne constituent pas une autorisation de
+> réutilisation du code au sens de la licence (voir [Licence](#licence)).
+
 La méthode recommandée est **Docker** : il télécharge et installe tout seul
 PHP 8.2 + Apache, MariaDB 10.6 et Mailpit (boîte mail de test). Rien d'autre à
 installer sur Windows. L'explication complète de l'architecture Docker est dans
