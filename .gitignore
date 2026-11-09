@@ -5,6 +5,7 @@ config/config.php
 # Notes de travail personnelles, non destinées au dépôt public
 CLAUDE.md
 entretien.md
+explication.md
 
 # Photos envoyées par les utilisateurs
 public/uploads/*
